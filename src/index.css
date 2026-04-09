@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-canvas: #0a0e1a;
+  --color-surface: #131a2d;
+  --color-obsidian: #ffffff;
+  --color-charcoal: #1e293b;
+  --color-subtle: #94a3b8;
+  --color-border: #2a3655;
+  --color-accent: #00c9b1;
+  --color-amber: #f5a623;
+  --color-coral: #ff6b6b;
+  --color-primary: #00c9b1;
+
+  --tracking-tight: -0.02em;
+  --tracking-tighter: -0.04em;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    background-color: var(--color-canvas);
+    color: var(--color-obsidian);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .technical-grid {
+    background-size: 40px 40px;
+    background-image:
+      linear-gradient(to right, rgba(0, 201, 177, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 201, 177, 0.05) 1px, transparent 1px);
+    mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
+  }
+  .premium-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .premium-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 201, 177, 0.1);
+    border-color: var(--color-accent);
+  }
+  .node-line { stroke-dasharray: 4; animation: dash 30s linear infinite; }
+  
+  .pricing-transition {
+    transition:
+      transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 500ms cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 500ms cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 500ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform, opacity, box-shadow;
+  }
+  .shimmer-layer { transform: translateX(-100%); }
+  .group:hover .shimmer-layer { animation: shimmer 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+}
+
+@keyframes dash { to { stroke-dashoffset: -100; } }
+@keyframes shimmer { 100% { transform: translateX(100%); } }
+
+/* SVG Animations from Hero */
+@keyframes signal-flow {
+  0% { stroke-dashoffset: 60; opacity: 0; }
+  5% { opacity: 1; }
+  90% { stroke-dashoffset: -360; opacity: 1; }
+  95% { opacity: 0; }
+  100% { stroke-dashoffset: -360; opacity: 0; }
+}
+.signal-path {
+  stroke-dasharray: 60 400;
+  stroke-dashoffset: 60;
+  animation: signal-flow 6s linear infinite;
+}
+@keyframes pulse-context {
+  0% { transform: scale(1); fill: #00c9b1; }
+  5% { transform: scale(1.4); fill: #f5a623; }
+  15% { transform: scale(1); fill: #00c9b1; }
+}
+.node-context { animation: pulse-context 6s infinite ease-out; transform-origin: 50px 150px; }
+@keyframes pulse-assumptions {
+  25% { stroke-width: 1.5; transform: scale(1); }
+  30% { stroke-width: 2.5; transform: scale(1.05); stroke: #f5a623; }
+  40% { stroke-width: 1.5; transform: scale(1); stroke: #00c9b1; }
+}
+.node-assumptions { animation: pulse-assumptions 6s infinite ease-out; transform-origin: 190px 80px; }
+@keyframes pulse-evidence {
+  55% { stroke-width: 1.5; transform: scale(1); }
+  60% { stroke-width: 2.5; transform: scale(1.05); stroke: #ff6b6b; }
+  70% { stroke-width: 1.5; transform: scale(1); stroke: #00c9b1; }
+}
+.node-evidence { animation: pulse-evidence 6s infinite ease-out; transform-origin: 280px 120px; }
+@keyframes pulse-outcome {
+  85% { transform: scale(1); fill: #00c9b1; }
+  90% { transform: scale(1.25); fill: #ffffff; }
+  100% { transform: scale(1); fill: #00c9b1; }
+}
+.node-outcome { animation: pulse-outcome 6s infinite ease-out; transform-origin: 320px 150px; }
+@keyframes check-draw {
+  0%, 88% { stroke-dashoffset: 12; opacity: 0; }
+  92% { stroke-dashoffset: 0; opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+.outcome-check {
+  stroke-dasharray: 12;
+  stroke-dashoffset: 12;
+  animation: check-draw 6s linear infinite;
+}
+
+/* Def Step styles */
+.def-active .def-num { border-color: var(--color-accent); color: var(--color-canvas); background-color: var(--color-accent); transform: scale(1.1); box-shadow: 0 4px 12px rgba(0,201,177,0.2); }
+.def-inactive .def-content { opacity: 0.4; filter: grayscale(100%); }
+.def-active .def-content { opacity: 1; filter: grayscale(0%); transform: translateY(0); }
+.def-step { transition: opacity 0.5s ease; }
