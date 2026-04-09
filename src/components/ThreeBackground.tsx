@@ -80,7 +80,7 @@ const fragmentShader = `
       if (dist > 0.45) discard;
       float alpha = 1.0;
       vec3 color1 = uColor;
-      vec3 color2 = vec3(0.25, 0.35, 0.45);
+      vec3 color2 = vec3(0.6, 0.6, 0.6);
       vec3 finalColor = mix(color1, color2, vNoise * 0.5 + 0.5);
       gl_FragColor = vec4(finalColor, alpha);
   }
@@ -93,7 +93,7 @@ export default function ThreeBackground() {
     if (!containerRef.current) return;
     const container = containerRef.current;
     const scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2('#0a0e1a', 0.04);
+    scene.fog = new THREE.FogExp2('#F5F5F7', 0.04);
 
     const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
     camera.position.set(0, 0, 20);
@@ -111,7 +111,7 @@ export default function ThreeBackground() {
         uTime: { value: 0 },
         uDistortion: { value: 0.0 },
         uSize: { value: 1.8 },
-        uColor: { value: new THREE.Color('#00c9b1') },
+        uColor: { value: new THREE.Color('#111111') },
         uMouse: { value: new THREE.Vector2(0, 0) }
     };
 

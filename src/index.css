@@ -6,16 +6,16 @@
   --font-display: "Space Grotesk", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
-  --color-canvas: #0a0e1a;
-  --color-surface: #131a2d;
-  --color-obsidian: #ffffff;
-  --color-charcoal: #1e293b;
-  --color-subtle: #94a3b8;
-  --color-border: #2a3655;
-  --color-accent: #00c9b1;
-  --color-amber: #f5a623;
-  --color-coral: #ff6b6b;
-  --color-primary: #00c9b1;
+  --color-canvas: #F5F5F7;
+  --color-surface: #FFFFFF;
+  --color-obsidian: #111111;
+  --color-charcoal: #333333;
+  --color-subtle: #666666;
+  --color-border: #E5E5E5;
+  --color-accent: #111111;
+  --color-amber: #333333;
+  --color-coral: #111111;
+  --color-primary: #111111;
 
   --tracking-tight: -0.02em;
   --tracking-tighter: -0.04em;
@@ -41,20 +41,20 @@
   .technical-grid {
     background-size: 40px 40px;
     background-image:
-      linear-gradient(to right, rgba(0, 201, 177, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(0, 201, 177, 0.05) 1px, transparent 1px);
+      linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
     mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
   }
   .premium-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   .premium-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0, 201, 177, 0.1);
-    border-color: var(--color-accent);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-obsidian);
   }
   .node-line { stroke-dasharray: 4; animation: dash 30s linear infinite; }
   
@@ -88,27 +88,27 @@
   animation: signal-flow 6s linear infinite;
 }
 @keyframes pulse-context {
-  0% { transform: scale(1); fill: #00c9b1; }
-  5% { transform: scale(1.4); fill: #f5a623; }
-  15% { transform: scale(1); fill: #00c9b1; }
+  0% { transform: scale(1); fill: #111; }
+  5% { transform: scale(1.4); fill: #666; }
+  15% { transform: scale(1); fill: #111; }
 }
 .node-context { animation: pulse-context 6s infinite ease-out; transform-origin: 50px 150px; }
 @keyframes pulse-assumptions {
   25% { stroke-width: 1.5; transform: scale(1); }
-  30% { stroke-width: 2.5; transform: scale(1.05); stroke: #f5a623; }
-  40% { stroke-width: 1.5; transform: scale(1); stroke: #00c9b1; }
+  30% { stroke-width: 2.5; transform: scale(1.05); stroke: #666; }
+  40% { stroke-width: 1.5; transform: scale(1); stroke: #111; }
 }
 .node-assumptions { animation: pulse-assumptions 6s infinite ease-out; transform-origin: 190px 80px; }
 @keyframes pulse-evidence {
   55% { stroke-width: 1.5; transform: scale(1); }
-  60% { stroke-width: 2.5; transform: scale(1.05); stroke: #ff6b6b; }
-  70% { stroke-width: 1.5; transform: scale(1); stroke: #00c9b1; }
+  60% { stroke-width: 2.5; transform: scale(1.05); stroke: #666; }
+  70% { stroke-width: 1.5; transform: scale(1); stroke: #111; }
 }
 .node-evidence { animation: pulse-evidence 6s infinite ease-out; transform-origin: 280px 120px; }
 @keyframes pulse-outcome {
-  85% { transform: scale(1); fill: #00c9b1; }
-  90% { transform: scale(1.25); fill: #ffffff; }
-  100% { transform: scale(1); fill: #00c9b1; }
+  85% { transform: scale(1); fill: #111; }
+  90% { transform: scale(1.25); fill: #666; }
+  100% { transform: scale(1); fill: #111; }
 }
 .node-outcome { animation: pulse-outcome 6s infinite ease-out; transform-origin: 320px 150px; }
 @keyframes check-draw {
@@ -123,7 +123,7 @@
 }
 
 /* Def Step styles */
-.def-active .def-num { border-color: var(--color-accent); color: var(--color-canvas); background-color: var(--color-accent); transform: scale(1.1); box-shadow: 0 4px 12px rgba(0,201,177,0.2); }
+.def-active .def-num { border-color: var(--color-obsidian); color: var(--color-surface); background-color: var(--color-obsidian); transform: scale(1.1); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
 .def-inactive .def-content { opacity: 0.4; filter: grayscale(100%); }
 .def-active .def-content { opacity: 1; filter: grayscale(0%); transform: translateY(0); }
 .def-step { transition: opacity 0.5s ease; }

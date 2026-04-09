@@ -95,36 +95,36 @@ function Hero() {
             </div>
             <div className="flex-1 relative">
               <svg className="w-full h-full" viewBox="0 0 400 300">
-                <path d="M50,150 C100,150 100,80 150,80" fill="none" stroke="#2a3655" strokeWidth="2"></path>
-                <path d="M50,150 C100,150 100,220 150,220" fill="none" stroke="#2a3655" strokeWidth="2"></path>
-                <path d="M150,80 C200,80 200,120 250,120" fill="none" stroke="#2a3655" strokeWidth="2"></path>
-                <path d="M150,220 C200,220 200,180 250,180" fill="none" stroke="#2a3655" strokeWidth="2"></path>
-                <path d="M250,120 L320,150" fill="none" stroke="#2a3655" strokeWidth="2"></path>
-                <path d="M250,180 L320,150" fill="none" stroke="#2a3655" strokeWidth="2"></path>
+                <path d="M50,150 C100,150 100,80 150,80" fill="none" stroke="#E5E5E5" strokeWidth="2"></path>
+                <path d="M50,150 C100,150 100,220 150,220" fill="none" stroke="#E5E5E5" strokeWidth="2"></path>
+                <path d="M150,80 C200,80 200,120 250,120" fill="none" stroke="#E5E5E5" strokeWidth="2"></path>
+                <path d="M150,220 C200,220 200,180 250,180" fill="none" stroke="#E5E5E5" strokeWidth="2"></path>
+                <path d="M250,120 L320,150" fill="none" stroke="#E5E5E5" strokeWidth="2"></path>
+                <path d="M250,180 L320,150" fill="none" stroke="#E5E5E5" strokeWidth="2"></path>
 
-                <path d="M50,150 C100,150 100,80 150,80 C200,80 200,120 250,120 L320,150" fill="none" stroke="#00c9b1" strokeWidth="2.5" strokeLinecap="round" className="signal-path"></path>
+                <path d="M50,150 C100,150 100,80 150,80 C200,80 200,120 250,120 L320,150" fill="none" stroke="#111" strokeWidth="2.5" strokeLinecap="round" className="signal-path"></path>
 
-                <circle cx="50" cy="150" r="6" fill="#00c9b1" className="node-context"></circle>
-                <text x="50" y="175" textAnchor="middle" fontFamily='"Space Grotesk", sans-serif' fontSize="10" fontWeight="600" fill="#fff">
+                <circle cx="50" cy="150" r="6" fill="#111" className="node-context"></circle>
+                <text x="50" y="175" textAnchor="middle" fontFamily='"Space Grotesk", sans-serif' fontSize="10" fontWeight="600" fill="#111">
                   Social
                 </text>
 
-                <rect x="150" y="70" width="80" height="20" rx="4" fill="#131a2d" stroke="#f5a623" strokeWidth="1.5" className="node-assumptions"></rect>
-                <text x="190" y="83" textAnchor="middle" fontFamily='"Space Grotesk", sans-serif' fontSize="9" fontWeight="600" fill="#fff" dy="1">
+                <rect x="150" y="70" width="80" height="20" rx="4" fill="#FFFFFF" stroke="#333333" strokeWidth="1.5" className="node-assumptions"></rect>
+                <text x="190" y="83" textAnchor="middle" fontFamily='"Space Grotesk", sans-serif' fontSize="9" fontWeight="600" fill="#111" dy="1">
                   Physical
                 </text>
 
-                <rect x="150" y="210" width="80" height="20" rx="4" fill="#131a2d" stroke="#2a3655"></rect>
-                <rect x="250" y="170" width="60" height="20" rx="4" fill="#1e293b"></rect>
+                <rect x="150" y="210" width="80" height="20" rx="4" fill="#FFFFFF" stroke="#E5E5E5"></rect>
+                <rect x="250" y="170" width="60" height="20" rx="4" fill="#F5F5F7"></rect>
 
-                <rect x="250" y="110" width="60" height="20" rx="4" fill="#131a2d" stroke="#ff6b6b" strokeWidth="1.5" className="node-evidence"></rect>
-                <text x="280" y="123" textAnchor="middle" fontFamily='"Space Grotesk", sans-serif' fontSize="9" fontWeight="600" fill="#fff" dy="1">
+                <rect x="250" y="110" width="60" height="20" rx="4" fill="#FFFFFF" stroke="#111111" strokeWidth="1.5" className="node-evidence"></rect>
+                <text x="280" y="123" textAnchor="middle" fontFamily='"Space Grotesk", sans-serif' fontSize="9" fontWeight="600" fill="#111" dy="1">
                   Spatial
                 </text>
 
-                <circle cx="320" cy="150" r="12" fill="#00c9b1" className="node-outcome"></circle>
-                <path d="M316 150l3 3 5-5" stroke="#131a2d" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" className="outcome-check"></path>
-                <text x="320" y="178" textAnchor="middle" fontFamily='"Space Grotesk", sans-serif' fontSize="10" fontWeight="600" fill="#fff">
+                <circle cx="320" cy="150" r="12" fill="#111" className="node-outcome"></circle>
+                <path d="M316 150l3 3 5-5" stroke="#FFFFFF" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" className="outcome-check"></path>
+                <text x="320" y="178" textAnchor="middle" fontFamily='"Space Grotesk", sans-serif' fontSize="10" fontWeight="600" fill="#111">
                   SPSS
                 </text>
               </svg>
@@ -210,7 +210,7 @@ function DecisionLifecycle() {
   return (
     <section ref={sectionRef} id="framework" className="relative w-full bg-canvas border-b border-border/60" style={{ height: '400vh' }}>
       <div className="sticky top-0 left-0 w-full h-screen overflow-hidden flex flex-col items-center justify-center">
-        <div className="absolute inset-0 bg-[radial-gradient(#00c9b110_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(#11111110_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
         <div className="max-w-4xl w-full px-6 md:px-12 relative z-10 flex flex-col items-center h-full py-20">
           <div ref={headerRef} className="text-center mb-12 shrink-0 opacity-0 transition-opacity duration-700">
             <h2 className="font-display text-2xl md:text-3xl font-semibold text-obsidian tracking-tight mb-3">
@@ -621,7 +621,7 @@ function Testimonials() {
 
   return (
     <section className="py-32 bg-obsidian text-white relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#00c9b1 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
+      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#111 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
@@ -634,7 +634,7 @@ function Testimonials() {
                 >
                   <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tighter mb-8 leading-tight">{slide.quote}</h2>
                   <div className="flex items-center gap-4">
-                    <img src={slide.img} alt={slide.name} className="w-12 h-12 rounded-full object-cover border border-accent/30 shadow-sm" />
+                    <img src={slide.img} alt={slide.name} className="w-12 h-12 rounded-full object-cover border border-white/30 shadow-sm" />
                     <div>
                       <div className="font-sans font-medium text-white">{slide.name}</div>
                       <div className="font-sans text-sm text-white/50">{slide.title}</div>
@@ -648,14 +648,14 @@ function Testimonials() {
               <button 
                 onClick={() => setCurrentIndex(Math.max(0, currentIndex - 1))}
                 disabled={currentIndex === 0}
-                className="group w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white/10 hover:border-accent/50 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                className="group w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/50 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
               >
                 <ChevronLeft className="w-4 h-4" />
               </button>
               <button 
                 onClick={() => setCurrentIndex(Math.min(slides.length - 1, currentIndex + 1))}
                 disabled={currentIndex === slides.length - 1}
-                className="group w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white/10 hover:border-accent/50 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                className="group w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/50 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
               >
                 <ChevronRight className="w-4 h-4" />
               </button>
@@ -664,7 +664,7 @@ function Testimonials() {
           <div className="flex flex-row md:flex-col justify-between gap-6 md:gap-0 md:space-y-12 border-t md:border-t-0 md:border-l border-white/10 pt-8 md:pt-0 md:pl-16">
             {stats[currentIndex].map((stat, i) => (
               <div key={i}>
-                <div className={`font-display text-3xl md:text-4xl font-bold mb-1 transition-all duration-300 ease-out transform ${!isInit ? 'animate-in fade-in slide-in-from-bottom-2' : ''} ${i === 0 ? 'text-accent' : i === 1 ? 'text-amber' : 'text-coral'}`}>
+                <div className={`font-display text-3xl md:text-4xl font-bold mb-1 transition-all duration-300 ease-out transform ${!isInit ? 'animate-in fade-in slide-in-from-bottom-2' : ''}`}>
                   {stat.val}
                 </div>
                 <div className={`font-sans text-sm text-white/50 transition-opacity duration-300 ease-out ${!isInit ? 'animate-in fade-in' : ''}`}>
@@ -738,7 +738,7 @@ function Pricing() {
                   ))}
                 </ul>
                 <button className={`w-full py-3 rounded-lg text-xs font-semibold transition-all duration-300 ease-out active:scale-[0.97] active:duration-100 relative z-10
-                  ${isPro ? 'bg-accent text-canvas hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(0,201,177,0.3)]' : 'border border-border text-obsidian bg-canvas hover:scale-[1.03] hover:border-accent hover:shadow-[0_0_15px_rgba(0,201,177,0.1)]'}
+                  ${isPro ? 'bg-accent text-canvas hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(0,0,0,0.3)]' : 'border border-border text-obsidian bg-canvas hover:scale-[1.03] hover:border-accent hover:shadow-[0_0_15px_rgba(0,0,0,0.1)]'}
                 `}>
                   {card.btnText}
                 </button>
