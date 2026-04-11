@@ -68,7 +68,9 @@ export default function JoinMovement() {
 
         <div className="text-center">
           <a 
-            href="mailto:contact@spsscommons.org" 
+            href="https://chat.whatsapp.com/FHoPpRitKpgEKFbClcXGYX"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-10 py-4 bg-obsidian text-white text-sm font-semibold rounded shadow-lg hover:shadow-2xl hover:scale-[1.02] active:scale-95 transition-all duration-300"
           >
             Get Involved Now

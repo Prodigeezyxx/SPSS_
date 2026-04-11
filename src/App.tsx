@@ -42,10 +42,10 @@ function Header() {
         <a href="#checker" className="hidden md:block font-sans text-xs font-medium text-subtle hover:text-obsidian transition-colors">
           SPSS Check ✓
         </a>
-        <button className="group relative isolate overflow-hidden bg-coral text-white text-xs font-semibold px-6 py-2.5 rounded shadow-[0_1px_2px_rgba(0,0,0,0.08)] ring-1 ring-white/10 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:scale-[1.04] hover:shadow-[0_8px_24px_-4px_rgba(255,107,107,0.4)] hover:ring-white/20 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-coral/20 focus:ring-offset-1">
-          <div className="shimmer-layer absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent z-10"></div>
+        <a href="https://chat.whatsapp.com/FHoPpRitKpgEKFbClcXGYX" target="_blank" rel="noopener noreferrer" className="group relative isolate overflow-hidden bg-coral text-white text-xs font-semibold px-6 py-2.5 rounded shadow-[0_1px_2px_rgba(0,0,0,0.08)] ring-1 ring-white/10 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:scale-[1.04] hover:shadow-[0_8px_24px_-4px_rgba(255,107,107,0.4)] hover:ring-white/20 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-coral/20 focus:ring-offset-1">
+          <div className="shimmer-layer absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent z-10 pointer-events-none"></div>
           <span className="relative z-20">Join Co-Creation</span>
-        </button>
+        </a>
       </div>
     </header>
   );
@@ -59,7 +59,7 @@ function Hero() {
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-surface border border-border/60 shadow-sm">
             <span className="w-1.5 h-1.5 rounded-full bg-amber"></span>
             <span className="font-sans text-[11px] font-medium text-amber tracking-tight">
-              Originated by Iyobosa Rehoboth · Africa Deep Tech Summit 2026
+              Originated by Iyobosa Rehoboth
             </span>
           </div>
           <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-obsidian leading-[1.1]">
@@ -473,21 +473,21 @@ function Testimonials() {
 
   const slides = [
     {
-      quote: `"The SPSS framework gives us a vocabulary to discuss what was previously invisible—the social and physical realities that determine whether a technology actually works in our context."`,
-      name: "Dr. Amina Diop",
-      title: "Director, West African AI Policy Institute",
-      img: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=100&h=100&q=80"
-    },
-    {
-      quote: `"We stopped trying to import Silicon Valley models and started building from our own ground truth. The difference in adoption and sustainability has been night and day."`,
-      name: "Kwame Osei",
-      title: "Founder, AgriTech Solutions",
+      quote: `"The combination of digital technology and human creativity in deploying it will revolutionize life by overcoming isolation, speeding up change, and taking success to scale."`,
+      name: "Sam Dryden",
+      title: "Director of Agricultural Development",
       img: "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?auto=format&fit=crop&w=100&h=100&q=80"
     },
     {
-      quote: `"This isn't just theory. It's a practical blueprint for how we ensure the next wave of frontier technology doesn't just extract from Africa, but empowers it."`,
-      name: "Nneka Eze",
-      title: "Venture Partner",
+      quote: `"In my experience, in Africa there is space for innovation. And you don't have to look far... Look around you. You might be experiencing a problem that is a need in the community."`,
+      name: "Sizwe Nzima",
+      title: "Founder, Iyeza Health",
+      img: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=100&h=100&q=80"
+    },
+    {
+      quote: `"Constraints are the most wonderful things in business, because constraints allow you to be innovative and come up with different solutions."`,
+      name: "Michael Jordaan",
+      title: "CEO, MonteGray Capital",
       img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&h=100&q=80"
     }
   ];
@@ -592,9 +592,6 @@ function Footer() {
           <div className="space-y-2">
             <p className="text-sm font-semibold text-obsidian">
               SPSS Commons · Originated by Iyobosa Rehoboth
-            </p>
-            <p className="text-xs text-subtle leading-relaxed">
-              First presented at the Africa Deep Tech Summit · 2026
             </p>
             <p className="text-xs font-mono text-subtle leading-relaxed mt-4 pt-4 border-t border-border/60">
               This document is open. Share it. Challenge it. Build on it.
