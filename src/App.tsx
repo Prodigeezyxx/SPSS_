@@ -1,6 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import ThreeBackground from './components/ThreeBackground';
 import { CircleDashed, ArrowRight, GitBranch, History, FileText, ChevronLeft, ChevronRight } from 'lucide-react';
+import SPSSChecker from './components/SPSSChecker';
+import SpatialEmbodiedLayer from './components/SpatialEmbodiedLayer';
+import Roadmap from './components/Roadmap';
+import Governance from './components/Governance';
+import ResearchAgenda from './components/ResearchAgenda';
+import JoinMovement from './components/JoinMovement';
+import Citations from './components/Citations';
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -327,151 +334,39 @@ function DecisionLifecycle() {
   );
 }
 
-function Features() {
+function TheCase() {
   return (
-    <section className="py-32 px-6 md:px-12 lg:px-20">
+    <section id="case" className="py-32 px-6 md:px-12 lg:px-20 bg-canvas">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-          <div className="max-w-xl">
-            <h2 className="font-sans text-4xl md:text-5xl font-semibold text-obsidian tracking-tight mb-6 leading-[1.1]">
-              Structured reasoning.
-              <span className="text-subtle block">Not just data points.</span>
-            </h2>
-            <p className="text-subtle text-lg leading-relaxed">
-              Bridge the gap between raw analytics and executive decisions
-              with a platform designed for defensibility.
-            </p>
-          </div>
-          <a href="#" className="pb-1 border-b border-obsidian text-sm font-medium hover:opacity-70 transition-opacity mb-2">
-            Explore Platform Features
-          </a>
+        <div className="text-center mb-16">
+          <h2 className="font-display text-3xl md:text-5xl font-semibold text-obsidian tracking-tight mb-6">
+            The Evidence That Demands a Different Approach
+          </h2>
+          <p className="text-subtle text-lg max-w-2xl mx-auto">
+            Why we cannot simply copy-paste global technology models.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-          <div className="md:col-span-8 group relative bg-white border border-border rounded-xl overflow-hidden hover:border-obsidian/30 transition-all duration-500">
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] bg-[size:24px_24px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-            <div className="relative z-10 p-10 h-full flex flex-col justify-between">
-              <div className="flex justify-between items-start">
-                <div className="max-w-md">
-                  <div className="w-10 h-10 bg-canvas border border-border rounded flex items-center justify-center mb-6 text-obsidian shadow-sm">
-                    <GitBranch className="w-5 h-5" />
-                  </div>
-                  <h3 className="text-2xl font-semibold text-obsidian mb-3">Decision Lineage</h3>
-                  <p className="text-subtle leading-relaxed">
-                    Traverse the reasoning graph from outcome to assumption.
-                    Every node is traceable.
-                  </p>
-                </div>
-                <div className="hidden lg:block">
-                  <div className="px-3 py-1 bg-canvas border border-border rounded text-[10px] font-mono text-subtle uppercase tracking-wider group-hover:text-obsidian group-hover:border-obsidian/30 transition-colors">
-                    Live Trace
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-12 h-32 w-full relative flex items-center border-t border-border/40 pt-6 overflow-hidden">
-                <svg className="w-full h-full" viewBox="0 0 600 100" preserveAspectRatio="xMidYMid meet">
-                  <defs>
-                    <marker id="arrow-head" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto">
-                      <path d="M0,0 L4,2 L0,4" fill="#111"></path>
-                    </marker>
-                  </defs>
-                  <path d="M20,50 C100,50 120,20 200,20 C280,20 300,80 380,80 C460,80 480,50 560,50" fill="none" stroke="#E5E5E5" strokeWidth="1.5" strokeDasharray="4 4"></path>
-                  <path d="M20,50 C100,50 120,20 200,20 C280,20 300,80 380,80 C460,80 480,50 560,50" fill="none" stroke="#111" strokeWidth="1.5" strokeDasharray="600" strokeDashoffset="600" className="transition-all duration-[1500ms] ease-in-out group-hover:stroke-dashoffset-0" markerEnd="url(#arrow-head)"></path>
-                  <g className="transition-all duration-500 delay-0 opacity-100 group-hover:scale-110 origin-center">
-                    <circle cx="20" cy="50" r="4" fill="#111"></circle>
-                    <text x="20" y="70" textAnchor="middle" className="text-[8px] font-mono fill-subtle opacity-0 group-hover:opacity-100 transition-opacity duration-300">INPUT</text>
-                  </g>
-                  <g className="transition-all duration-500 delay-[400ms] opacity-50 scale-75 group-hover:opacity-100 group-hover:scale-100 origin-center">
-                    <circle cx="200" cy="20" r="4" fill="#fff" stroke="#111" strokeWidth="1.5"></circle>
-                    <text x="200" y="40" textAnchor="middle" className="text-[8px] font-mono fill-subtle opacity-0 group-hover:opacity-100 transition-opacity duration-300">LOGIC A</text>
-                  </g>
-                  <g className="transition-all duration-500 delay-[800ms] opacity-50 scale-75 group-hover:opacity-100 group-hover:scale-100 origin-center">
-                    <circle cx="380" cy="80" r="4" fill="#fff" stroke="#111" strokeWidth="1.5"></circle>
-                    <text x="380" y="100" textAnchor="middle" className="text-[8px] font-mono fill-subtle opacity-0 group-hover:opacity-100 transition-opacity duration-300">LOGIC B</text>
-                  </g>
-                  <g className="transition-all duration-500 delay-[1200ms] opacity-50 scale-75 group-hover:opacity-100 group-hover:scale-100 origin-center">
-                    <circle cx="560" cy="50" r="4" fill="#111"></circle>
-                    <text x="560" y="70" textAnchor="middle" className="text-[8px] font-mono fill-obsidian font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">RESULT</text>
-                  </g>
-                </svg>
-              </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {[
+            { val: "~600M", desc: "Africans lack reliable electricity access (IEA, 2024)" },
+            { val: "85%", desc: "Sub-Saharan employment is informal (ILO, 2023)" },
+            { val: "416M", desc: "Mobile users, yet 75% population unconnected (GSMA, 2025)" },
+            { val: "2,000+", desc: "Languages, <100 in AI training data (Masakhane/CIGI, 2025)" }
+          ].map((stat, i) => (
+            <div key={i} className="bg-surface border border-border p-8 rounded-xl shadow-sm text-center transform transition-all duration-300 hover:-translate-y-1 hover:border-obsidian/30">
+              <div className="absolute top-0 left-0 w-full h-1 bg-obsidian rounded-t-xl opacity-20"></div>
+              <span className="block font-display text-4xl font-bold text-obsidian mb-3">{stat.val}</span>
+              <span className="block font-sans text-sm text-subtle leading-relaxed">{stat.desc}</span>
             </div>
-          </div>
+          ))}
+        </div>
 
-          <div className="md:col-span-4 group relative bg-white border border-border rounded-xl overflow-hidden hover:border-obsidian/30 transition-all duration-500 flex flex-col">
-            <div className="p-10 relative z-10 flex flex-col h-full">
-              <div className="w-10 h-10 bg-canvas border border-border rounded flex items-center justify-center mb-6 text-obsidian shadow-sm">
-                <History className="w-5 h-5" />
-              </div>
-              <h3 className="text-xl font-semibold text-obsidian mb-3">Immutable Audit</h3>
-              <p className="text-sm text-subtle leading-relaxed mb-8">
-                Time-travel through your strategy. Inspect past states with zero ambiguity.
-              </p>
-              <div className="mt-auto relative w-full h-32 flex flex-col justify-end items-center">
-                <div className="absolute w-[80%] h-12 bg-border/30 border border-border rounded-t-md top-4 scale-90 opacity-0 group-hover:opacity-100 group-hover:top-0 transition-all duration-500 ease-out"></div>
-                <div className="absolute w-[90%] h-12 bg-canvas border border-border rounded-t-md top-8 scale-95 opacity-50 group-hover:opacity-80 group-hover:top-6 transition-all duration-500 ease-out delay-75"></div>
-                <div className="relative w-full h-16 bg-white border border-border rounded shadow-sm flex items-center px-4 gap-4 z-10 transition-transform duration-300 group-hover:translate-y-[-5px] group-hover:shadow-md">
-                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full shrink-0"></div>
-                  <div className="flex-1">
-                    <div className="flex justify-between items-center mb-1">
-                      <span className="text-[10px] font-bold text-obsidian uppercase tracking-wide">Current State</span>
-                      <span className="text-[10px] font-mono text-subtle">v2.4.1</span>
-                    </div>
-                    <div className="h-1 w-full bg-canvas rounded overflow-hidden">
-                      <div className="h-full w-2/3 bg-obsidian/20"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="md:col-span-12 group relative bg-white border border-border rounded-xl overflow-hidden hover:border-obsidian/30 transition-all duration-500">
-            <div className="p-10 flex flex-col md:flex-row items-center gap-12">
-              <div className="flex-1 max-w-lg">
-                <div className="w-10 h-10 bg-canvas border border-border rounded flex items-center justify-center mb-6 text-obsidian shadow-sm">
-                  <FileText className="w-5 h-5" />
-                </div>
-                <h3 className="text-xl font-semibold text-obsidian mb-2">Automated Synthesis</h3>
-                <p className="text-subtle leading-relaxed">
-                  Turn complex graph data into plain-language briefing
-                  documents automatically. Maintain a single source of truth.
-                </p>
-              </div>
-              <div className="flex-1 w-full flex items-center justify-center gap-6 h-32 relative">
-                <div className="flex flex-col gap-2 relative">
-                  <div className="w-10 h-12 bg-white border border-border shadow-sm rounded-sm flex items-center justify-center transition-all duration-700 ease-in-out group-hover:translate-x-12 group-hover:opacity-0 group-hover:scale-50">
-                    <div className="w-4 h-0.5 bg-subtle/20"></div>
-                  </div>
-                  <div className="w-10 h-12 bg-white border border-border shadow-sm rounded-sm flex items-center justify-center absolute top-2 left-2 transition-all duration-700 ease-in-out delay-100 group-hover:translate-x-10 group-hover:opacity-0 group-hover:scale-50">
-                    <div className="w-4 h-0.5 bg-subtle/20"></div>
-                  </div>
-                </div>
-                <div className="w-16 h-16 rounded-full border border-dashed border-border flex items-center justify-center relative">
-                  <div className="absolute inset-0 rounded-full border-t border-obsidian transparent animate-spin [animation-duration:3s] opacity-0 group-hover:opacity-100"></div>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-subtle group-hover:text-obsidian transition-colors">
-                    <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 12"></path>
-                    <path d="M3 3v9h9"></path>
-                  </svg>
-                </div>
-                <div className="w-24 h-32 bg-white border border-border shadow-lg rounded-sm p-4 space-y-3 transition-all duration-500 group-hover:shadow-xl group-hover:scale-105">
-                  <div className="w-6 h-6 rounded bg-obsidian/5"></div>
-                  <div className="space-y-1.5">
-                    <div className="h-1.5 w-full bg-obsidian/10 rounded overflow-hidden">
-                      <div className="h-full w-0 bg-obsidian group-hover:w-full transition-all duration-700 delay-300 ease-out"></div>
-                    </div>
-                    <div className="h-1.5 w-3/4 bg-obsidian/10 rounded overflow-hidden">
-                      <div className="h-full w-0 bg-obsidian group-hover:w-full transition-all duration-700 delay-500 ease-out"></div>
-                    </div>
-                    <div className="h-1.5 w-5/6 bg-obsidian/10 rounded overflow-hidden">
-                      <div className="h-full w-0 bg-obsidian group-hover:w-full transition-all duration-700 delay-700 ease-out"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="bg-surface border border-border rounded-xl p-8 md:p-12 shadow-sm relative overflow-hidden">
+          <div className="absolute left-0 top-0 bottom-0 w-2 bg-obsidian"></div>
+          <p className="font-sans text-lg md:text-xl text-obsidian leading-relaxed max-w-4xl mx-auto pl-4">
+            Standard technology frameworks assume constant electricity, high-speed internet, formal economic systems, and text-based interaction. These assumptions exclude the majority of Africa's 1.4 billion people from both participating in and benefiting from the frontier technology revolution. The SPSS framework inverts this logic: design for actual conditions first. The constraint becomes the innovation driver. The excluded community becomes the design authority.
+          </p>
         </div>
       </div>
     </section>
@@ -679,119 +574,61 @@ function Testimonials() {
   );
 }
 
-function Pricing() {
-  const [selectedId, setSelectedId] = useState('pricing-pro');
 
-  const cards = [
-    { id: 'pricing-hobby', title: 'Observer', price: 'Free', period: '', desc: 'For researchers and students exploring the SPSS framework.', features: ['Access to public blueprints', 'Community forum access', 'Standard documentation'], btnText: 'Join Community' },
-    { id: 'pricing-pro', title: 'Co-Creator', price: 'Contribute', period: '', desc: 'For technologists actively building aligned solutions.', features: ['Submit to the blueprint registry', 'Peer review access', 'Working group participation'], btnText: 'Apply to Contribute' },
-    { id: 'pricing-ent', title: 'Institutional', price: 'Partner', period: '', desc: 'For organizations deploying frontier tech in African contexts.', features: ['Dedicated framework guidance', 'Pilot program integration', 'Policy advocacy support'], btnText: 'Contact Partnerships' }
-  ];
-
-  return (
-    <section className="py-32 px-6 md:px-12 lg:px-20 border-b border-border bg-surface">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="font-display text-3xl md:text-4xl font-semibold text-obsidian tracking-tight mb-4">
-            Join the Commons
-          </h2>
-          <p className="text-subtle text-base">
-            This is an open, collaborative effort. Find your place in the ecosystem.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {cards.map((card) => {
-            const isSelected = selectedId === card.id;
-            const isPro = card.id === 'pricing-pro';
-            
-            return (
-              <div 
-                key={card.id}
-                onClick={() => setSelectedId(card.id)}
-                className={`pricing-card group relative p-8 rounded-xl flex flex-col cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent pricing-transition
-                  ${isSelected ? 'scale-[1.02] shadow-2xl z-10 ring-1 ring-accent/20 opacity-100' : 'scale-[0.98] opacity-60 hover:opacity-90 hover:shadow-xl'}
-                  ${isPro ? 'bg-obsidian text-white shadow-accent/10' : 'bg-canvas border text-obsidian'}
-                  ${isSelected && !isPro ? 'border-accent' : (!isPro ? 'border-border' : 'border-transparent')}
-                `}
-                role="button" 
-                tabIndex={0}
-              >
-                {!isPro && <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>}
-                
-                <div className="mb-4 relative z-10">
-                  <span className={`font-semibold ${isPro ? 'text-white' : 'text-obsidian'}`}>{card.title}</span>
-                </div>
-                <div className="mb-4 flex items-baseline gap-1 relative z-10">
-                  <span className={`font-display text-3xl font-semibold ${isPro ? 'text-accent' : 'text-obsidian'}`}>{card.price}</span>
-                  {card.period && <span className={`text-sm ${isPro ? 'text-white/60' : 'text-subtle'}`}>{card.period}</span>}
-                </div>
-                <p className={`text-sm mb-8 leading-relaxed relative z-10 ${isPro ? 'text-white/60' : 'text-subtle'}`}>
-                  {card.desc}
-                </p>
-                <ul className="space-y-4 mb-8 flex-1 relative z-10">
-                  {card.features.map((feat, i) => (
-                    <li key={i} className={`flex gap-3 text-sm ${isPro ? 'text-white/80' : 'text-subtle'}`}>
-                      <span className={isPro ? 'text-accent' : 'text-accent'}>✓</span>
-                      {feat}
-                    </li>
-                  ))}
-                </ul>
-                <button className={`w-full py-3 rounded-lg text-xs font-semibold transition-all duration-300 ease-out active:scale-[0.97] active:duration-100 relative z-10
-                  ${isPro ? 'bg-accent text-canvas hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(0,0,0,0.3)]' : 'border border-border text-obsidian bg-canvas hover:scale-[1.03] hover:border-accent hover:shadow-[0_0_15px_rgba(0,0,0,0.1)]'}
-                `}>
-                  {card.btnText}
-                </button>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function Footer() {
   return (
     <footer className="bg-canvas py-20 px-6 md:px-12 lg:px-20 relative z-10 border-t border-border/60">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12">
-        <div className="max-w-xs space-y-6">
+        <div className="max-w-sm space-y-6">
           <div className="flex items-center gap-2">
-            <div className="w-4 h-4 bg-accent rounded-sm"></div>
-            <span className="font-display font-bold text-sm tracking-tight text-obsidian">SPSS COMMONS</span>
+            <div className="w-5 h-5 bg-accent text-canvas flex items-center justify-center rounded-sm">
+              <CircleDashed className="w-3 h-3" strokeWidth={3} />
+            </div>
+            <span className="font-display text-lg font-bold tracking-tight text-obsidian">
+              SPSS COMMONS
+            </span>
           </div>
-          <p className="text-xs text-subtle leading-relaxed">
-            A living framework for operationalizing frontier technologies through Africa's indigenous intelligences.
-          </p>
-          <div className="text-[10px] text-subtle/60">
-            Originated by Iyobosa Rehoboth<br/>
-            Africa Deep Tech Summit 2026
+          <div className="space-y-2">
+            <p className="text-sm font-semibold text-obsidian">
+              SPSS Commons · Originated by Iyobosa Rehoboth
+            </p>
+            <p className="text-xs text-subtle leading-relaxed">
+              First presented at the Africa Deep Tech Summit · 2026
+            </p>
+            <p className="text-xs font-mono text-subtle leading-relaxed mt-4 pt-4 border-t border-border/60">
+              This document is open. Share it. Challenge it. Build on it.
+            </p>
+            <p className="text-[10px] text-subtle/70 mt-2">
+              Licensed under Creative Commons Attribution 4.0 International
+            </p>
           </div>
         </div>
 
-        <div className="flex gap-16">
+        <div className="flex flex-wrap gap-12 md:gap-24">
           <div className="space-y-4">
-            <h4 className="text-xs font-bold text-obsidian">Framework</h4>
-            <ul className="space-y-2 text-xs text-subtle">
-              <li><a href="#" className="hover:text-accent transition-colors">Social Layer</a></li>
-              <li><a href="#" className="hover:text-accent transition-colors">Physical Layer</a></li>
-              <li><a href="#" className="hover:text-accent transition-colors">Spatial Layer</a></li>
+            <h4 className="text-xs font-bold text-obsidian uppercase tracking-wider">Framework</h4>
+            <ul className="space-y-3 text-sm text-subtle">
+              <li><a href="#case" className="hover:text-obsidian transition-colors">The Case</a></li>
+              <li><a href="#framework" className="hover:text-obsidian transition-colors">Layers & Principles</a></li>
+              <li><a href="#evidence" className="hover:text-obsidian transition-colors">Evidence Base</a></li>
+              <li><a href="#spatial-embodied" className="hover:text-obsidian transition-colors">Spatial Concept</a></li>
             </ul>
           </div>
           <div className="space-y-4">
-            <h4 className="text-xs font-bold text-obsidian">Resources</h4>
-            <ul className="space-y-2 text-xs text-subtle">
-              <li><a href="#" className="hover:text-accent transition-colors">Blueprints</a></li>
-              <li><a href="#" className="hover:text-accent transition-colors">Case Studies</a></li>
-              <li><a href="#" className="hover:text-accent transition-colors">SPSS Checker</a></li>
+            <h4 className="text-xs font-bold text-obsidian uppercase tracking-wider">Initiatives</h4>
+            <ul className="space-y-3 text-sm text-subtle">
+              <li><a href="#pilots" className="hover:text-obsidian transition-colors">Pilot Programs</a></li>
+              <li><a href="#roadmap" className="hover:text-obsidian transition-colors">90-Day Roadmap</a></li>
+              <li><a href="#checker" className="hover:text-obsidian transition-colors">Compliance Checker <span className="ml-1 text-accent font-bold">✓</span></a></li>
             </ul>
           </div>
           <div className="space-y-4">
-            <h4 className="text-xs font-bold text-obsidian">Community</h4>
-            <ul className="space-y-2 text-xs text-subtle">
-              <li><a href="#" className="hover:text-accent transition-colors">Discord</a></li>
-              <li><a href="#" className="hover:text-accent transition-colors">GitHub</a></li>
-              <li><a href="#" className="hover:text-accent transition-colors">Contribute</a></li>
+            <h4 className="text-xs font-bold text-obsidian uppercase tracking-wider">Community</h4>
+            <ul className="space-y-3 text-sm text-subtle">
+              <li><a href="#" className="hover:text-obsidian transition-colors">GitHub</a></li>
+              <li><a href="#" className="hover:text-obsidian transition-colors">Notion Wiki</a></li>
+              <li><a href="#" className="hover:text-obsidian transition-colors">LinkedIn</a></li>
             </ul>
           </div>
         </div>
@@ -810,10 +647,16 @@ export default function App() {
         <Hero />
         <Logos />
         <DecisionLifecycle />
-        <Features />
+        <TheCase />
         <HowItWorks />
+        <SpatialEmbodiedLayer />
+        <Roadmap />
         <Testimonials />
-        <Pricing />
+        <Governance />
+        <ResearchAgenda />
+        <JoinMovement />
+        <SPSSChecker />
+        <Citations />
         <Footer />
       </div>
     </div>
