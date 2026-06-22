@@ -8,6 +8,7 @@ import Governance from './components/Governance';
 import ResearchAgenda from './components/ResearchAgenda';
 import JoinMovement from './components/JoinMovement';
 import Citations from './components/Citations';
+import SPSSObservatory from './components/observatory/SPSSObservatory';
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -21,30 +22,33 @@ function Header() {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 w-full px-6 py-5 md:px-12 flex justify-between items-center backdrop-blur-md border-b border-border/50 transition-all duration-300 ${scrolled ? 'bg-surface/90 shadow-sm' : 'bg-canvas/90'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 w-full px-6 py-4 md:px-12 flex justify-between items-center backdrop-blur-md border-b transition-all duration-300 ${scrolled ? 'bg-surface/95 border-border/60 shadow-sm' : 'bg-canvas/90 border-transparent'}`}>
       <div className="flex items-center gap-2">
-        <div className="w-5 h-5 bg-accent text-canvas flex items-center justify-center rounded-sm">
-          <CircleDashed className="w-3 h-3" strokeWidth={3} />
+        <div className="w-4 h-4 bg-obsidian text-canvas flex items-center justify-center rounded-sm">
+          <CircleDashed className="w-2.5 h-2.5" strokeWidth={3} />
         </div>
-        <span className="font-display text-lg font-bold tracking-tight bg-gradient-to-r from-amber to-coral bg-clip-text text-transparent">
-          SPSS COMMONS
+        <span className="font-mono text-sm font-semibold tracking-tight text-obsidian">
+          SPSS
+        </span>
+        <span className="font-mono text-[9px] text-subtle/40 tracking-wider uppercase hidden sm:inline">
+          Commons
         </span>
       </div>
 
-      <nav className="hidden md:flex items-center gap-8">
-        <a href="#case" className="font-sans text-xs font-medium text-subtle hover:text-obsidian transition-colors">The Case</a>
-        <a href="#framework" className="font-sans text-xs font-medium text-subtle hover:text-obsidian transition-colors">Framework</a>
-        <a href="#evidence" className="font-sans text-xs font-medium text-subtle hover:text-obsidian transition-colors">Evidence</a>
-        <a href="#pilots" className="font-sans text-xs font-medium text-subtle hover:text-obsidian transition-colors">Pilots</a>
+      <nav className="hidden md:flex items-center gap-6">
+        <a href="#case" className="font-mono text-[10px] font-medium text-subtle uppercase tracking-wider hover:text-obsidian transition-colors">Case</a>
+        <a href="#framework" className="font-mono text-[10px] font-medium text-subtle uppercase tracking-wider hover:text-obsidian transition-colors">Framework</a>
+        <a href="#evidence" className="font-mono text-[10px] font-medium text-subtle uppercase tracking-wider hover:text-obsidian transition-colors">Evidence</a>
+        <a href="#pilots" className="font-mono text-[10px] font-medium text-subtle uppercase tracking-wider hover:text-obsidian transition-colors">Pilots</a>
+        <a href="#observatory" className="font-mono text-[10px] font-medium text-obsidian uppercase tracking-wider hover:text-obsidian transition-colors border-b border-obsidian pb-0.5">Observatory</a>
       </nav>
 
-      <div className="flex items-center gap-5">
-        <a href="#checker" className="hidden md:block font-sans text-xs font-medium text-subtle hover:text-obsidian transition-colors">
-          SPSS Check ✓
+      <div className="flex items-center gap-4">
+        <a href="#checker" className="hidden md:block font-mono text-[10px] font-medium text-subtle uppercase tracking-wider hover:text-obsidian transition-colors">
+          SPSS Check
         </a>
-        <a href="https://chat.whatsapp.com/FHoPpRitKpgEKFbClcXGYX" target="_blank" rel="noopener noreferrer" className="group relative isolate overflow-hidden bg-coral text-white text-xs font-semibold px-6 py-2.5 rounded shadow-[0_1px_2px_rgba(0,0,0,0.08)] ring-1 ring-white/10 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:scale-[1.04] hover:shadow-[0_8px_24px_-4px_rgba(255,107,107,0.4)] hover:ring-white/20 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-coral/20 focus:ring-offset-1">
-          <div className="shimmer-layer absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent z-10 pointer-events-none"></div>
-          <span className="relative z-20">Join Co-Creation</span>
+        <a href="https://chat.whatsapp.com/FHoPpRitKpgEKFbClcXGYX" target="_blank" rel="noopener noreferrer" className="bg-obsidian text-white text-[10px] font-mono font-medium uppercase tracking-wider px-5 py-2 rounded transition-all duration-300 hover:shadow-[0_4px_16px_-4px_rgba(0,0,0,0.3)] active:scale-[0.98]">
+          Join Co-Creation
         </a>
       </div>
     </header>
@@ -53,34 +57,37 @@ function Header() {
 
 function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex flex-col lg:flex-row items-center justify-between px-6 md:px-12 lg:px-20 pt-32 pb-20 gap-16">
-      <div className="max-w-2xl space-y-10 relative z-10">
-        <div className="space-y-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-surface border border-border/60 shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-amber"></span>
-            <span className="font-sans text-[11px] font-medium text-amber tracking-tight">
+    <section className="relative min-h-[85vh] flex flex-col lg:flex-row items-center justify-between px-6 md:px-12 lg:px-20 pt-28 pb-16 gap-12">
+      <div className="max-w-2xl space-y-8 relative z-10">
+        <div className="space-y-5">
+          <div className="flex items-center gap-3">
+            <span className="font-mono text-[10px] font-medium text-subtle tracking-widest uppercase">
+              Research Framework · v0.1
+            </span>
+            <span className="w-px h-3 bg-border"></span>
+            <span className="font-mono text-[10px] text-subtle/60 tracking-wide">
               Originated by Iyobosa Rehoboth
             </span>
           </div>
-          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-obsidian leading-[1.1]">
-            Building Frontier Technology
+          <h1 className="font-display text-4xl md:text-5xl lg:text-[3.5rem] font-bold tracking-tighter text-obsidian leading-[1.08]">
+            Spatial, Physical &amp;
             <br />
-            <span className="text-accent">From the Ground Up.</span>
+            Social Systems
           </h1>
-          <p className="max-w-md font-sans text-base text-subtle leading-relaxed">
-            A living framework for operationalizing frontier technologies through Africa's indigenous intelligences. With Africa, For the World.
+          <p className="max-w-lg font-sans text-[15px] text-subtle leading-[1.7] tracking-tight">
+            A living framework for operationalizing frontier technologies through Africa's indigenous intelligences. Designing with communities, not for them.
           </p>
+
         </div>
 
-        <div className="flex flex-wrap items-center gap-4">
-          <button className="group relative isolate overflow-hidden bg-coral text-white text-sm font-semibold px-8 py-3.5 rounded shadow-[0_1px_2px_rgba(0,0,0,0.08)] ring-1 ring-white/10 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:scale-[1.03] hover:shadow-[0_12px_32px_-8px_rgba(255,107,107,0.4)] hover:ring-white/20 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-coral/20 focus:ring-offset-2 flex items-center gap-2">
-            <div className="shimmer-layer absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent z-0 pointer-events-none"></div>
-            <span className="relative z-10">Explore Blueprint</span>
-            <ArrowRight className="w-4 h-4 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
-          <button className="px-8 py-3.5 bg-transparent text-obsidian border border-border text-sm font-medium rounded shadow-sm transition-all duration-300 ease-out hover:bg-surface hover:border-obsidian/40 hover:shadow-md active:scale-[0.97] focus:outline-none focus:ring-2 focus:ring-obsidian/10 focus:ring-offset-2">
+        <div className="flex flex-wrap items-center gap-3">
+          <a href="#observatory" className="group relative isolate overflow-hidden bg-obsidian text-white text-xs font-mono font-medium uppercase tracking-wider px-7 py-3 rounded transition-all duration-300 hover:shadow-[0_8px_24px_-8px_rgba(0,0,0,0.3)] active:scale-[0.98] flex items-center gap-2">
+            <span>Enter Observatory</span>
+            <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+          </a>
+          <a href="#checker" className="px-7 py-3 bg-transparent text-obsidian border border-border text-xs font-mono font-medium uppercase tracking-wider rounded transition-all duration-300 hover:bg-surface hover:border-obsidian/30">
             Run SPSS Check
-          </button>
+          </a>
         </div>
       </div>
 
@@ -148,18 +155,30 @@ function Hero() {
 }
 
 function Logos() {
+  const orgs = [
+    { name: 'Masakhane', desc: 'Community-owned NLP for 2,000+ African languages', url: 'https://masakhane.io' },
+    { name: 'Imisi3D / ARVR Africa', desc: 'XR creation lab building Africa\'s spatial computing ecosystem', url: 'https://imisi3d.com' },
+    { name: 'Africa Deep Tech', desc: 'Foundation incubating deep technology research across the continent', url: 'https://africadeeptech.com' },
+    { name: 'Deep Learning Indaba', desc: '2026 theme: "Sovereign Intelligence — Africa\'s Path in Frontier AI"', url: 'https://deeplearningindaba.com' },
+    { name: 'Zenzeleni', desc: 'Community-owned ISPs in rural South Africa', url: 'https://zenzeleni.net' },
+    { name: 'Zipline', desc: 'Drone logistics serving 2,000+ health facilities across 3 African nations', url: 'https://flyzipline.com' },
+    { name: 'Ushahidi', desc: 'Open-source crisis mapping — community data for collective action', url: 'https://ushahidi.com' },
+    { name: 'Code for Africa', desc: 'Civic tech and AI for Good fellowship across 22 African countries', url: 'https://codeforafrica.org' },
+  ];
   return (
     <section className="border-y border-border/60 py-16 bg-surface">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-10">
-        <p className="text-xs font-semibold text-subtle whitespace-nowrap md:w-auto w-full text-center md:text-left uppercase tracking-widest">
-          Precedents That Prove The Pattern
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <p className="text-xs font-semibold text-subtle whitespace-nowrap text-center md:text-left uppercase tracking-widest mb-8">
+          African Institutions That Demonstrate The Thesis (growing list)
         </p>
-        <div className="flex flex-wrap justify-center md:justify-end gap-x-12 gap-y-8 opacity-60 hover:opacity-100 transition-opacity duration-500">
-          <span className="font-display text-lg font-bold text-obsidian tracking-tight">Masakhane</span>
-          <span className="font-display text-lg font-bold text-obsidian tracking-tight">Zenzeleni</span>
-          <span className="font-display text-lg font-bold text-obsidian tracking-tight">Zipline</span>
-          <span className="font-display text-lg font-bold text-obsidian tracking-tight">BRCK</span>
-          <span className="font-display text-lg font-bold text-obsidian tracking-tight">Hello Tractor</span>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {orgs.map(o => (
+            <a key={o.name} href={o.url} target="_blank" rel="noopener noreferrer"
+              className="group border border-border/50 rounded-lg px-4 py-3 hover:border-obsidian/30 hover:bg-canvas transition-all duration-300">
+              <span className="font-display text-sm font-bold text-obsidian tracking-tight block">{o.name}</span>
+              <span className="text-[10px] text-subtle leading-snug block mt-1 group-hover:text-obsidian/70 transition-colors">{o.desc}</span>
+            </a>
+          ))}
         </div>
       </div>
     </section>
@@ -368,6 +387,16 @@ function TheCase() {
             Standard technology frameworks assume constant electricity, high-speed internet, formal economic systems, and text-based interaction. These assumptions exclude the majority of Africa's 1.4 billion people from both participating in and benefiting from the frontier technology revolution. The SPSS framework inverts this logic: design for actual conditions first. The constraint becomes the innovation driver. The excluded community becomes the design authority.
           </p>
         </div>
+
+        <div className="mt-12 bg-surface border border-border rounded-xl p-8 md:p-12 shadow-sm relative overflow-hidden">
+          <div className="absolute left-0 top-0 bottom-0 w-2 bg-amber"></div>
+          <div className="pl-4">
+            <h3 className="font-display text-lg font-semibold text-obsidian mb-3">What SPSS Integrates</h3>
+            <p className="font-sans text-sm text-subtle leading-relaxed">
+              SPSS draws from established traditions: the Appropriate Technology movement (Schumacher, 1970s), Participatory Design, Decolonial AI (Mohamed et al., 2020), and Data Sovereignty principles. Its specific contribution is integrating physical infrastructure constraints, frontier technology affordances, and community governance into a single evaluative architecture. Existing frameworks address these dimensions individually. SPSS treats them as interdependent — a technology that is physically viable but socially extractive, or socially grounded but physically impossible, fails the framework by design.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -411,12 +440,12 @@ function HowItWorks() {
   }, [activeIndex]);
 
   const steps = [
-    { num: '01', title: 'Healthcare Diagnostics', desc: 'Applying the SPSS framework to deploy AI diagnostic tools in low-bandwidth environments, prioritizing local medical knowledge and offline capabilities.' },
-    { num: '02', title: 'Agricultural Yield Prediction', desc: 'Integrating satellite imagery with indigenous farming practices to create predictive models that respect traditional land management.' },
-    { num: '03', title: 'Financial Inclusion', desc: 'Designing decentralized financial protocols that map to existing community trust networks (like Ajo/Esusu) rather than imposing Western banking models.' },
-    { num: '04', title: 'Urban Planning', desc: 'Using spatial computing to model informal settlements, ensuring that development plans are co-created with residents rather than imposed top-down.' },
-    { num: '05', title: 'Language Preservation', desc: 'Building LLMs trained on low-resource African languages, ensuring data sovereignty and preventing linguistic extraction.' },
-    { num: '06', title: 'Energy Distribution', desc: 'Optimizing micro-grids using community-owned data, balancing physical constraints with social equity.' }
+    { num: '01', title: 'Healthcare Diagnostics', desc: 'How would AI diagnostic tools work in low-bandwidth environments? SPSS would prioritize local medical knowledge, offline capability, and community-governed health data.' },
+    { num: '02', title: 'Agricultural Yield', desc: 'How would satellite imagery integrate with indigenous farming practices? SPSS would require predictive models that respect traditional land management and local data sovereignty.' },
+    { num: '03', title: 'Financial Inclusion', desc: 'How would decentralized financial protocols map to existing community trust networks like Ajo and Esusu? SPSS designs from informal systems up, not banking models down.' },
+    { num: '04', title: 'Urban Planning', desc: 'How would spatial computing model informal settlements? SPSS would require development plans co-created with residents, not imposed top-down.' },
+    { num: '05', title: 'Language Preservation', desc: 'How would LLMs be trained on low-resource African languages without linguistic extraction? SPSS requires community data sovereignty and local governance of training corpora.' },
+    { num: '06', title: 'Energy Distribution', desc: 'How would micro-grids be optimized using community-owned data? SPSS would balance physical constraints with social equity through community governance.' }
   ];
 
   return (
@@ -425,15 +454,15 @@ function HowItWorks() {
         <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
           <div className="max-w-2xl">
             <h2 className="font-display text-3xl font-semibold text-obsidian tracking-tight mb-4">
-              Evidence in Action
+              Where SPSS Should Be Tested
             </h2>
             <p className="font-sans text-subtle text-base leading-relaxed">
-              The framework applied to real-world challenges.
+              Priority domains where the framework's thesis can be validated. These are not active pilots — they are target application areas.
             </p>
           </div>
-          <a href="#" className="pb-1 border-b border-accent text-sm font-medium text-accent hover:opacity-70 transition-opacity mb-2">
-            View All Case Studies
-          </a>
+          <span className="pb-1 border-b border-border text-sm font-medium text-subtle mb-2">
+            Proposed Domains
+          </span>
         </div>
 
         <div className="relative w-full">
@@ -494,19 +523,19 @@ function Testimonials() {
 
   const stats = [
     [
-      { val: "3x", lbl: "Higher Adoption" },
-      { val: "100%", lbl: "Data Sovereignty" },
-      { val: "Zero", lbl: "Extraction" }
+      { val: "20", lbl: "Assessment Questions" },
+      { val: "4", lbl: "Evaluation Layers" },
+      { val: "CC BY-SA 4.0", lbl: "Open License" }
     ],
     [
-      { val: "50+", lbl: "Active Pilots" },
-      { val: "12", lbl: "Countries" },
-      { val: "Full", lbl: "Alignment" }
+      { val: "8", lbl: "Open Research Questions" },
+      { val: "18", lbl: "Academic Citations" },
+      { val: "v0.1", lbl: "Framework Version" }
     ],
     [
-      { val: "10k+", lbl: "Community Nodes" },
-      { val: "98%", lbl: "Uptime" },
-      { val: "100%", lbl: "Trust" }
+      { val: "2", lbl: "Incubation Partners" },
+      { val: "5", lbl: "Governance Protocols" },
+      { val: "90", lbl: "Days to First Pilot" }
     ]
   ];
 
@@ -518,6 +547,14 @@ function Testimonials() {
     <section className="py-32 bg-obsidian text-white relative overflow-hidden">
       <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#111 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <div className="mb-16">
+          <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block mb-4">
+            Not endorsements — intellectual foundations
+          </span>
+          <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-tight">
+            Thinking That Shaped This Work
+          </h2>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
             <div className="relative w-full" style={{ display: 'grid', gridTemplateAreas: '"stack"' }}>
@@ -576,6 +613,38 @@ function Testimonials() {
 
 
 
+function Limitations() {
+  const tradeoffs = [
+    { title: 'Slower Deployment', desc: 'SPSS-aligned solutions require deeper community engagement before building. This means longer development cycles and higher coordination costs compared to move-fast approaches.' },
+    { title: 'Not For Emergencies', desc: 'Time-critical emergency deployments where speed outweighs sovereignty may not benefit from full SPSS alignment. The framework is designed for sustained infrastructure, not crisis response.' },
+    { title: 'Scoring Is Provisional', desc: 'The Compliance Checker uses v0.1 scoring with equal layer weighting and arbitrary thresholds. These need empirical calibration through actual pilot data — which does not yet exist.' },
+    { title: 'Synthesis, Not Invention', desc: 'SPSS integrates existing ideas (Appropriate Technology, Participatory Design, Decolonial AI, Data Sovereignty) into a combined evaluative lens. It does not claim to originate these individual concepts.' },
+  ];
+
+  return (
+    <section className="py-24 px-6 md:px-12 lg:px-20 bg-canvas border-b border-border/60">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="font-display text-3xl font-semibold text-obsidian tracking-tight mb-3">
+            Limitations & Trade-offs
+          </h2>
+          <p className="font-sans text-subtle text-base max-w-xl mx-auto">
+            Where this framework is weakest, and what it costs to use it.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {tradeoffs.map((item, idx) => (
+            <div key={idx} className="bg-surface border border-border rounded-xl p-6 shadow-sm">
+              <h4 className="font-display text-base font-semibold text-obsidian mb-2">{item.title}</h4>
+              <p className="font-sans text-sm text-subtle leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Footer() {
   return (
     <footer className="bg-canvas py-20 px-6 md:px-12 lg:px-20 relative z-10 border-t border-border/60">
@@ -596,8 +665,15 @@ function Footer() {
             <p className="text-xs font-mono text-subtle leading-relaxed mt-4 pt-4 border-t border-border/60">
               This document is open. Share it. Challenge it. Build on it.
             </p>
-            <p className="text-[10px] text-subtle/70 mt-2">
-              Licensed under Creative Commons Attribution 4.0 International
+            <p className="text-[10px] text-subtle/70 mt-2 flex flex-col gap-2">
+              <span>Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" className="underline hover:text-obsidian transition-colors">Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</a></span>
+              <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition-opacity">
+                <img 
+                  src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg" 
+                  alt="Creative Commons Attribution-ShareAlike 4.0 International License" 
+                  className="h-8 w-auto"
+                />
+              </a>
             </p>
           </div>
         </div>
@@ -609,14 +685,14 @@ function Footer() {
               <li><a href="#case" className="hover:text-obsidian transition-colors">The Case</a></li>
               <li><a href="#framework" className="hover:text-obsidian transition-colors">Layers & Principles</a></li>
               <li><a href="#evidence" className="hover:text-obsidian transition-colors">Evidence Base</a></li>
-              <li><a href="#spatial-embodied" className="hover:text-obsidian transition-colors">Spatial Concept</a></li>
+              <li><a href="#observatory" className="hover:text-obsidian transition-colors">Observatory</a></li>
             </ul>
           </div>
           <div className="space-y-4">
             <h4 className="text-xs font-bold text-obsidian uppercase tracking-wider">Initiatives</h4>
             <ul className="space-y-3 text-sm text-subtle">
               <li><a href="#pilots" className="hover:text-obsidian transition-colors">Pilot Programs</a></li>
-              <li><a href="#roadmap" className="hover:text-obsidian transition-colors">90-Day Roadmap</a></li>
+              <li><a href="#governance" className="hover:text-obsidian transition-colors">Commons Protocol</a></li>
               <li><a href="#checker" className="hover:text-obsidian transition-colors">Compliance Checker <span className="ml-1 text-accent font-bold">✓</span></a></li>
             </ul>
           </div>
@@ -643,13 +719,14 @@ export default function App() {
       <div className="z-10 flex flex-col w-full relative">
         <Hero />
         <Logos />
+        <SPSSObservatory />
         <DecisionLifecycle />
+        <Governance />
         <TheCase />
         <HowItWorks />
-        <SpatialEmbodiedLayer />
-        <Roadmap />
+
         <Testimonials />
-        <Governance />
+        <Limitations />
         <ResearchAgenda />
         <JoinMovement />
         <SPSSChecker />

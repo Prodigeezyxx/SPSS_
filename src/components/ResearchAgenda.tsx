@@ -2,14 +2,14 @@ import React from 'react';
 
 export default function ResearchAgenda() {
   const questions = [
-    "How do we design episodic synchronization protocols that respect community governance — not just technical consistency?",
-    "What mathematical frameworks best represent weighted community testimony in collective AI decision-making?",
-    "How do Spatial & Embodied experiences need to be redesigned for oral-primary, multi-generational knowledge transmission?",
-    "What legal structures best operationalize community data trusts across different African jurisdictions?",
-    "How do we train language models that respect oral knowledge without extracting it from community control?",
-    "What energy profiles make edge AI genuinely viable in 4-hour-solar-cycle environments?",
-    "How do informal trust networks need to be represented in digital governance systems without formalizing them into rigidity?",
-    "What role can Spatial Computing play in making distributed communities feel genuinely co-present in collective decision-making?"
+    "How do we design episodic protocols that respect community governance — not just technical consistency?",
+    "What legal structures best operationalize data trusts across different African jurisdictions?",
+    "How do digital trust networks need to be represented in digital governance systems without formalizing them into rigidity?",
+    "What scientific frameworks best represent weighted community testimony in collective AI decision-making?",
+    "How do we train language models that respect knowledge without extracting it from local control?",
+    "What role can Spatial Computing and Immersive technology play in making distributed communities feel genuinely co-present in decision-making?",
+    "How do future interfaces need to be redesigned for oral-primary, multi-generational knowledge transmission?",
+    "What energy profiles make edge AI genuinely viable in variable-hour-solar-cycle environments?"
   ];
 
   return (

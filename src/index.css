@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", sans-serif;
+  --font-sans: "Inter", -apple-system, sans-serif;
   --font-display: "Space Grotesk", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
 
   --color-canvas: #F5F5F7;
   --color-surface: #FFFFFF;
   --color-obsidian: #111111;
   --color-charcoal: #333333;
   --color-subtle: #666666;
-  --color-border: #E5E5E5;
+  --color-border: #E0E0E0;
   --color-accent: #111111;
   --color-amber: #333333;
   --color-coral: #111111;
@@ -24,37 +24,72 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0,0,0,0.15) transparent;
   }
+  html::-webkit-scrollbar { width: 6px; }
+  html::-webkit-scrollbar-track { background: transparent; }
+  html::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 3px; }
+  html::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.25); }
+  /* Dark scrollbar for Observatory */
+  .dark-scroll::-webkit-scrollbar { width: 4px; }
+  .dark-scroll::-webkit-scrollbar-track { background: transparent; }
+  .dark-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+  .dark-scroll::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
   body {
     margin: 0;
     background-color: var(--color-canvas);
     color: var(--color-obsidian);
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
     overflow-x: hidden;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+  }
+  /* Research-grade label style */
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-subtle);
+  }
+  /* Data/metric display */
+  .data-value {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    letter-spacing: -0.02em;
   }
 }
 
 @layer utilities {
   .technical-grid {
-    background-size: 40px 40px;
+    background-size: 32px 32px;
     background-image:
-      linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+      linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
     mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
   }
   .premium-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   .premium-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-    border-color: var(--color-obsidian);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    border-color: rgba(0,0,0,0.15);
   }
   .node-line { stroke-dasharray: 4; animation: dash 30s linear infinite; }
   
@@ -69,6 +104,21 @@
   }
   .shimmer-layer { transform: translateX(-100%); }
   .group:hover .shimmer-layer { animation: shimmer 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+  
+  /* Research section divider */
+  .section-divider {
+    border-top: 1px solid var(--color-border);
+    position: relative;
+  }
+  .section-divider::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 48px;
+    height: 1px;
+    background: var(--color-obsidian);
+  }
 }
 
 @keyframes dash { to { stroke-dashoffset: -100; } }
@@ -127,3 +177,67 @@
 .def-inactive .def-content { opacity: 0.4; filter: grayscale(100%); }
 .def-active .def-content { opacity: 1; filter: grayscale(0%); transform: translateY(0); }
 .def-step { transition: opacity 0.5s ease; }
+
+/* ═══ OBSERVATORY STYLES ═══ */
+@keyframes obs-blink-amber {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.obs-blink-amber {
+  color: #f5a623;
+  animation: obs-blink-amber 1.5s ease-in-out infinite;
+}
+.obs-blink-amber-dot {
+  animation: obs-blink-amber 2s ease-in-out infinite;
+}
+/* Pilot site pulse */
+@keyframes obs-pilot-pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.6); opacity: 0.2; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+.obs-pilot-ring {
+  animation: obs-pilot-pulse 2s ease-in-out infinite;
+}
+/* Observatory slider */
+.obs-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 2px;
+  outline: none;
+  accent-color: #f5a623;
+}
+.obs-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  background: #f5a623;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #0a0a0a;
+}
+.obs-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: #f5a623;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #0a0a0a;
+}
+/* Observatory tooltip */
+.obs-tooltip {
+  position: absolute;
+  background: #111;
+  border: 1px solid #333;
+  padding: 8px 12px;
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  border-radius: 4px;
+  z-index: 999;
+  pointer-events: none;
+  color: rgba(255,255,255,0.7);
+  white-space: normal;
+  max-width: 300px;
+}

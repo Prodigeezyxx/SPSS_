@@ -7,21 +7,25 @@ export default function SpatialEmbodiedLayer() {
       title: "Spatial Heritage Engines",
       icon: <Network className="w-5 h-5" />,
       desc: "AR/MR systems and spatial computing environments that allow communities to document, navigate, and share indigenous knowledge in spatial form. Elders walk through virtual reconstructions of traditional practices while youth co-create the archive.",
+      mve: "Minimum viable: audio-first archive on basic smartphones, with spatial metadata via GPS and photos. No headset required."
     },
     {
       title: "Embodied Skills Transfer",
       icon: <PenTool className="w-5 h-5" />,
       desc: "Offline-capable embodied AI and robotics simulations for training healthcare workers, agricultural extensionists, and technical skills across remote areas. Locally-deployed, device-shared, available in local languages with zero connectivity required.",
+      mve: "Minimum viable: pre-loaded video demonstrations with interactive quizzes, running offline on shared tablets."
     },
     {
       title: "Spatial Community Twins",
       icon: <Home className="w-5 h-5" />,
       desc: "Community-governed spatial overlays of physical spaces—markets, farms, clinics—that function as living digital twins. Fed by community-owned sensor data and navigable through embodied voice interfaces in local languages.",
+      mve: "Minimum viable: community-maintained mapping with simple data overlays, synced when connectivity is available."
     },
     {
       title: "Spatial Governance Chambers",
       icon: <MessageSquare className="w-5 h-5" />,
       desc: "Immersive spatial environments designed for community deliberation. These enable distributed communities to gather in shared virtual space for collective decision-making, using culturally appropriate formats that respect oral traditions.",
+      mve: "Minimum viable: moderated voice conference calls with structured decision protocols and recorded outcomes."
     }
   ];
 
@@ -54,6 +58,9 @@ export default function SpatialEmbodiedLayer() {
                </h4>
                <p className="font-sans text-sm text-subtle leading-relaxed">
                  {concept.desc}
+               </p>
+               <p className="font-sans text-xs text-amber mt-3 italic border-t border-border/40 pt-3">
+                 ⚡ {concept.mve}
                </p>
              </div>
           ))}

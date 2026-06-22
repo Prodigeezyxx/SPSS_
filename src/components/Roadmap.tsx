@@ -8,23 +8,23 @@ export default function Roadmap() {
       title: 'Days 1-30: Convening',
       icon: <Calendar className="w-5 h-5 text-obsidian" />,
       items: [
-        'Publish SPSS Commons Blueprint',
-        'Launch co-creation call to hubs & universities',
-        'Identify 3 community partners per pilot',
-        'Establish Working Group',
-        'Map resources (Masakhane, Zenzeleni, XR)'
+        '✓ Publish SPSS Commons Blueprint & interactive portal',
+        'Launch open co-creation call via community channels',
+        'Identify potential community partners for first pilot',
+        'Form initial Working Group from ARVR Africa & Africa Deep Tech networks',
+        'Map existing resources and potential collaborators'
       ]
     },
     {
       id: 2,
-      title: 'Days 31-60: Designing',
+      title: 'Days 31-60: Scoping',
       icon: <PenTool className="w-5 h-5 text-obsidian" />,
       items: [
-        'Deep engagement for Pilot 1',
-        'Scoping visits & stakeholder mapping',
-        'Technical architecture design',
-        'Governance framework workshops',
-        'Spatial & Embodied prototype sketches'
+        'Select and engage first pilot community partner',
+        'Conduct stakeholder mapping and needs assessment',
+        'Draft technical requirements for first pilot',
+        'Begin governance framework discussions with community',
+        'Sketch minimum viable prototypes grounded in physical constraints'
       ]
     },
     {
@@ -32,11 +32,11 @@ export default function Roadmap() {
       title: 'Days 61-90: Building',
       icon: <Rocket className="w-5 h-5 text-obsidian" />,
       items: [
-        'First prototype of offline Ag-AI',
-        'Draft Community Data Trust legal framework',
-        'Initiate Pilot 3 consent process',
-        'Launch interactive SPSS Commons Portal v1',
-        'Announce first Contributor Cohort'
+        'Develop first minimum viable prototype for selected pilot domain',
+        'Begin Community Data Trust consultation process',
+        'Open applications for first Contributor Cohort',
+        'Publish first progress report with honest assessment',
+        'Identify funding requirements for sustained pilot operations'
       ]
     }
   ];
@@ -49,7 +49,7 @@ export default function Roadmap() {
             From Blueprint to Reality
           </h2>
           <p className="font-sans text-subtle text-base max-w-xl mx-auto">
-            90 Days to First Pilot. Tracking the execution momentum of the SPSS Commons framework.
+            90-day roadmap for reaching the first pilot. Timelines are resource-dependent and will be updated transparently.
           </p>
         </div>
 
@@ -89,6 +89,12 @@ export default function Roadmap() {
               );
             })}
           </div>
+        </div>
+
+        <div className="mt-16 text-center">
+          <p className="font-mono text-xs text-subtle/60 max-w-lg mx-auto leading-relaxed">
+            Resource dependency note: This roadmap assumes a working group of 3-5 active contributors and access to at least one willing community partner. Timelines will shift based on actual resources available. We will document delays as transparently as progress.
+          </p>
         </div>
       </div>
     </section>
